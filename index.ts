@@ -1,16 +1,19 @@
-// 関数のオーバーロード
+// クラス
+// public(デフォルト)
 
-function add(a: number, b: number): number; //シグネチャ
-function add(a: string, b: string): string;
+class User {
+    // public name: string;
+    // constructor(name: string) {
+    //     this.name = name;
+    // }
 
-function add(a: any, b: any): any {
-    if (typeof a === "string" && typeof b === "string") {
-        return a + " " + b;
+    constructor(public name: string) {
     }
-    return a + b;
+    public sayHi(): void {
+        console.log('hi i am' + this.name);
+    }
 }
 
-console.log(add(5,3));
-console.log(add("hello","world"));
-
-
+var tom = new User('tom');
+console.log(tom.name);
+tom.sayHi()

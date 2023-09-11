@@ -1,9 +1,18 @@
-// 関数のオーバーロード
-function add(a, b) {
-    if (typeof a === "string" && typeof b === "string") {
-        return a + " " + b;
+// クラス
+// public(デフォルト)
+var User = /** @class */ (function () {
+    // public name: string;
+    // constructor(name: string) {
+    //     this.name = name;
+    // }
+    function User(name) {
+        this.name = name;
     }
-    return a + b;
-}
-console.log(add(5, 3));
-console.log(add("hello", "world"));
+    User.prototype.sayHi = function () {
+        console.log('hi i am' + this.name);
+    };
+    return User;
+}());
+var tom = new User('tom');
+console.log(tom.name);
+tom.sayHi();
