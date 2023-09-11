@@ -1,23 +1,20 @@
-//関数
+// 関数
+
+//昔ながらの書き方
 /*
-void: 返り値がない場合
- */
-
-// function add(a: number, b: number): number {
-//     return a + b;
-// }
-
-function add(a: number, b: number = 10): number {
-    if (b) {
-        return a + b;
-    } else {
-        return a + a;
-    }
+var add = function (a: number,b: number): number {
+    return a+b;
 }
+*/
 
-// console.log(add(5,3));
-//型が決まっているので、コンパイルエラーになる
-// console.log(add(5, "hello"))
+//アロー関数
+/*
+var add = (a: number, b: number): number => {
+    return a + b;
+}
+*/
+
+//上記の省略形
+var add = (a: number, b:number): number => a + b;
 
 console.log(add(5,3));
-console.log(add(5));
