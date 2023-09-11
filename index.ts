@@ -1,5 +1,11 @@
-class User {
+// 変数の静的型付け　<> 動的型付け
 
-}
+//Javascript
+// var x = 10;
+// x = "hello";
 
-console.log("hello world");
+//Typescript
+
+//このような書き方はNG
+// var x : number = 10;
+// x = "hello";
