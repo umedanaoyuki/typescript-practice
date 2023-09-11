@@ -7,7 +7,7 @@ void: 返り値がない場合
 //     return a + b;
 // }
 
-function add(a: number, b?: number): number {
+function add(a: number, b: number = 10): number {
     if (b) {
         return a + b;
     } else {

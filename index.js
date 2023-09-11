@@ -6,6 +6,7 @@ void: 返り値がない場合
 //     return a + b;
 // }
 function add(a, b) {
+    if (b === void 0) { b = 10; }
     if (b) {
         return a + b;
     }
