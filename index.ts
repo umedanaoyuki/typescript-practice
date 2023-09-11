@@ -1,11 +1,21 @@
-// 変数の静的型付け　<> 動的型付け
+//型
 
-//Javascript
-// var x = 10;
-// x = "hello";
+/**
+ * number
+ * string
+ * boolean
+ * any
+ */
 
-//Typescript
+var i: number;
+var i: number = 10;
+var i = 10; // i: number
 
-//このような書き方はNG
-// var x : number = 10;
-// x = "hello";
+var x; // var x: any
+x = 10;
+x = 'hello';
+
+//配列
+var results: number[];
+results = [10,5,3];
+
