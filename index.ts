@@ -1,20 +1,16 @@
-// 関数
+// 関数のオーバーロード
 
-//昔ながらの書き方
-/*
-var add = function (a: number,b: number): number {
-    return a+b;
-}
-*/
+function add(a: number, b: number): number; //シグネチャ
+function add(a: string, b: string): string;
 
-//アロー関数
-/*
-var add = (a: number, b: number): number => {
+function add(a: any, b: any): any {
+    if (typeof a === "string" && typeof b === "string") {
+        return a + " " + b;
+    }
     return a + b;
 }
-*/
-
-//上記の省略形
-var add = (a: number, b:number): number => a + b;
 
 console.log(add(5,3));
+console.log(add("hello","world"));
+
+
