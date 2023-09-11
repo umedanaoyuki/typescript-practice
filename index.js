@@ -1,22 +1,20 @@
-//列挙型
-// Signal
-// enum Signal {
-//     Red = 0,
-//     Blue = 1,
-//     Yellow = 2
+//関数
+/*
+void: 返り値がない場合
+ */
+// function add(a: number, b: number): number {
+//     return a + b;
 // }
-var Signal;
-(function (Signal) {
-    Signal[Signal["Red"] = 0] = "Red";
-    Signal[Signal["Blue"] = 3] = "Blue";
-    Signal[Signal["Yellow"] = 4] = "Yellow";
-})(Signal || (Signal = {}));
-(function (Signal) {
-    Signal[Signal["Green"] = 5] = "Green";
-})(Signal || (Signal = {}));
-var result;
-//if (result === Signal.Yellow) {...}
-//if (result === Signal['Yellow']){...}
-// console.log(Signal[2]); //Yellow
-// console.log(Signal[3]);
-console.log(Signal.Green); //5
+function add(a, b) {
+    if (b) {
+        return a + b;
+    }
+    else {
+        return a + a;
+    }
+}
+// console.log(add(5,3));
+//型が決まっているので、コンパイルエラーになる
+// console.log(add(5, "hello"))
+console.log(add(5, 3));
+console.log(add(5));
