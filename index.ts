@@ -1,21 +1,25 @@
-// クラス
-// public(デフォルト)
+//クラス
 
 class User {
-
     constructor(private _name: string) {
     }
-    public sayHi(): void {
+    public sayHi() : void {
         console.log('hi i am' + this._name);
     }
-    get name() {
-        return this._name;
-    }}
-    set name(newValue: string) {
-    this._name = newValue;
 }
 
-var tom = new User('tom');
-tom.name = "TOM";
-console.log(tom.name);
-tom.sayHi()
+class AdminUser extends User {
+    private _age: number;
+    constructor(_name: string, _age: number) {
+        super(_name);
+        this._age = _age;
+    }
+    public sayHi() : void {
+        console.log('my age ' + this._age);
+        super.sayHi();
+    }
+}
+
+var bob = new AdminUser("Bob", 23);
+
+bob.sayHi();
