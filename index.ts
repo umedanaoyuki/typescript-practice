@@ -1,21 +1,31 @@
-//型
+//列挙型
+// Signal
 
-/**
- * number
- * string
- * boolean
- * any
- */
 
-var i: number;
-var i: number = 10;
-var i = 10; // i: number
+// enum Signal {
+//     Red = 0,
+//     Blue = 1,
+//     Yellow = 2
+// }
 
-var x; // var x: any
-x = 10;
-x = 'hello';
+enum Signal {
+    Red,
+    Blue = 3,
+    Yellow
+}
 
-//配列
-var results: number[];
-results = [10,5,3];
+enum Signal {
+    Green = 5
+}
 
+
+
+
+var result: Signal;
+
+//if (result === Signal.Yellow) {...}
+//if (result === Signal['Yellow']){...}
+
+// console.log(Signal[2]); //Yellow
+// console.log(Signal[3]);
+console.log(Signal.Green) //5
