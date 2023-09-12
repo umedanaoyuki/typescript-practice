@@ -1,16 +1,25 @@
 // Interface
 //構造的部分型
 
-interface Result {
+interface SpringResult {
     a: number;
-    b: number;
 }
-const getTotal = (result: Result) => {
-    return result.a + result.b;
+
+interface FallResult {
+    b: number
+}
+
+//FinalResultはSpring,Fall,Finalのすべてをもつ
+interface FinalResult extends SpringResult, FallResult {
+    final: number;
+}
+
+const getTotal = (result: FinalResult) => {
+    return result.a + result.b + result.final;
 }
 
 let result = {
-    a: 32, b: 58, c:"hello"
+    a: 32, b: 58, final: 82,
 };
 
 const answer = getTotal(result);
