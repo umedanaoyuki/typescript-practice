@@ -11,15 +11,24 @@ interface FallResult {
 
 //FinalResultはSpring,Fall,Finalのすべてをもつ
 interface FinalResult extends SpringResult, FallResult {
-    final: number;
+    final?: number;
 }
 
+// const getTotal = (result: FinalResult) => {
+//     return result.a + result.b + result.final;
+// }
+
 const getTotal = (result: FinalResult) => {
-    return result.a + result.b + result.final;
+    if (result.final) {
+        return result.a + result.b + result.final;
+    } else {
+        return result.a + result.b;
+    }
+
 }
 
 let result = {
-    a: 32, b: 58, final: 82,
+    a: 32, b: 58, final: 10,
 };
 
 const answer = getTotal(result);
