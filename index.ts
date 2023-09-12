@@ -1,4 +1,5 @@
 // Interface
+//構造的部分型
 
 interface Result {
     a: number;
@@ -9,7 +10,7 @@ const getTotal = (result: Result) => {
 }
 
 let result = {
-    a: 32, b: 58
+    a: 32, b: 58, c:"hello"
 };
 
 const answer = getTotal(result);
