@@ -1,27 +1,18 @@
-// Interface -> Class
+// Generics
 
-interface GameUser {
-    score: number;
-    showCore(): void;
-}
+//同じような記述ばかり
+// const getStringArray = (value: string): string[] => {
+//     return [value, value, value];
+// }
+//
+// const getNumberArray = (value: number): number[] => {
+//     return [value, value, value];
+// }
 
-//interfaceをclassに実装する場合（この場合は、user classは score, showCore()を持っていないといけない）
-class User implements GameUser{
-    name: string;
-    score: number = 0;
+//型の箇所を「T」と書くのが慣習的
+const getArray = <T>(value: T): T[] => {
+    return [value,value,value];
+};
 
-    constructor(name: string) {
-        this.name = name;
-    }
-    sayHi(): void {
-        console.log("hi i am " + this.name);
-    }
-    showCore(): void {
-        console.log("score is " + this.score);
-    }
-
-}
-
-const user = new User("testMan");
-user.sayHi();
-console.log(user.name);
+console.log(getArray<number>(3));
+console.log(getArray<string>("hello"));
