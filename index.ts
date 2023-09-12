@@ -1,25 +1,13 @@
-//クラス
-//静的メンバ(class自体に紐づいたメンバ)
+// Interface
 
-class User {
-    name: string;
-    constructor(name: string) {
-        this.name = name
-        //静的メンバにアクセスするためにはクラス名をつける
-        User.count = User.count + 1;
-    }
-    public sayHi() : void {
-        console.log('hi i am' + this.name);
-    }
-    static count: number = 0;
-    static showDescription():void {
-        console.log("this class is about users");
-    }
+const getTotal = (result: {a: number, b: number}) => {
+    return result.a + result.b;
 }
 
-let tom = new User("tom");
-let bob = new User("bob");
-console.log(User.count)
-//インスタンスを作らなくても呼び出すことができる
-User.showDescription();
+let result = {
+    a: 32, b: 58
+};
+
+const answer = getTotal(result);
+console.log(answer);
 
