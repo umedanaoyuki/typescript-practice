@@ -1,36 +1,14 @@
-// Interface
-//構造的部分型
 
-interface SpringResult {
-    a: number;
-}
-
-interface FallResult {
-    b: number
-}
-
-//FinalResultはSpring,Fall,Finalのすべてをもつ
-interface FinalResult extends SpringResult, FallResult {
-    final?: number;
-}
-
-// const getTotal = (result: FinalResult) => {
-//     return result.a + result.b + result.final;
-// }
-
-const getTotal = (result: FinalResult) => {
-    if (result.final) {
-        return result.a + result.b + result.final;
-    } else {
-        return result.a + result.b;
+class User {
+    name: string;
+    constructor(name: string) {
+        this.name = name;
     }
-
+    sayHi(): void {
+        console.log("hi i am " + this.name);
+    }
 }
 
-let result = {
-    a: 32, b: 58, final: 10,
-};
-
-const answer = getTotal(result);
-console.log(answer);
-
+const user = new User("testMan");
+user.sayHi();
+console.log(user.name);
