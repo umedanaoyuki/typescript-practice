@@ -1,18 +1,14 @@
 // Generics
 
-//同じような記述ばかり
-// const getStringArray = (value: string): string[] => {
-//     return [value, value, value];
-// }
-//
-// const getNumberArray = (value: number): number[] => {
-//     return [value, value, value];
-// }
+class MyData<T> {
+    constructor(public value: T) {
+    }
+    getArray(): T[] {
+        return [this.value, this.value, this.value];
+    }
+}
 
-//型の箇所を「T」と書くのが慣習的
-const getArray = <T>(value: T): T[] => {
-    return [value,value,value];
-};
-
-console.log(getArray<number>(3));
-console.log(getArray<string>("hello"));
+let v1 = new MyData<string>("hello");
+console.log(v1.getArray());
+let v2 = new MyData<number>(234);
+console.log(v2.getArray());
