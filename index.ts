@@ -1,6 +1,10 @@
 // Interface
 
-const getTotal = (result: {a: number, b: number}) => {
+interface Result {
+    a: number;
+    b: number;
+}
+const getTotal = (result: Result) => {
     return result.a + result.b;
 }
 
