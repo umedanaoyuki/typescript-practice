@@ -1,40 +1,21 @@
 //クラス
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+//静的メンバ(class自体に紐づいたメンバ)
 var User = /** @class */ (function () {
-    function User(_name) {
-        this._name = _name;
+    function User(name) {
+        this.name = name;
+        //静的メンバにアクセスするためにはクラス名をつける
+        User.count = User.count + 1;
     }
     User.prototype.sayHi = function () {
-        console.log('hi i am' + this._name);
+        console.log('hi i am' + this.name);
     };
+    User.showDescription = function () {
+        console.log("this class is about users");
+    };
+    User.count = 0;
     return User;
 }());
-var AdminUser = /** @class */ (function (_super) {
-    __extends(AdminUser, _super);
-    function AdminUser(_name, _age) {
-        var _this = _super.call(this, _name) || this;
-        _this._age = _age;
-        return _this;
-    }
-    AdminUser.prototype.sayHi = function () {
-        console.log('my age ' + this._age);
-        _super.prototype.sayHi.call(this);
-    };
-    return AdminUser;
-}(User));
-var bob = new AdminUser("Bob", 23);
-bob.sayHi();
+var tom = new User("tom");
+var bob = new User("bob");
+console.log(User.count);
+User.showDescription();
